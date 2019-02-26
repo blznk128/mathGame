@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .block {
+  position:absolute;
+  background-color:#abc;
+  left:50px;
+  width:90px;
+  height:90px;
+  margin:5px;
+}
+.bomb {
+  position:absolute;
+  background-color:red;
+  left:250px;
+  width:40px;
+  height:40px;
+  margin:5px;
+}
+    </style>
+</head>
+<body>
+        <button id="left">left</button>
+        <button id="right">right</button>
+        <button id="up">up</button>
+        <button id="down">down</button>
+        <div class="block"></div>
+        <div class="bomb"></div>
+        <div class ="shake"></div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+        $("#right").click(function(){
+ $(".block").animate({"left": "+=50px"}, "fast", checkCollisions);
+});
+
+$("#left").click(function(){
+  $(".block").animate({"left": "-=50px"}, "fast", checkCollisions);
+});
+
+$("#up").click(function(){
+  $(".block").animate({"top": "-=50px"}, "fast", checkCollisions);
+});
+
+$("#down").click(function(){
+  $(".block").animate({"top": "+=50px"}, "fast", checkCollisions);
+});
+
+function getPositions(jiff) {
+  console.log( jiff)
+  var square = $(jiff);
+  
+  var pos = square.position();
+  var width = square.width();
+  var height = square.height();
+  return [ [ pos.left, pos.left + width ], [ pos.top, pos.top + height ] ];
+}
+        
+function comparePositions(p1, p2) {
+  var x1 = p1[0] < p2[0] ? p1 : p2;
+  var x2 = p1[0] < p2[0] ? p2 : p1;
+  return x1[1] > x2[0] || x1[0] === x2[0] ? true : false;
+}
+
+function checkCollisions(){
+  var box = $(".bomb")[0];
+  var pos = getPositions(box);
+  var pos2 = getPositions(this);
+  console.log(this)
+  var horizontalMatch = comparePositions(pos[0], pos2[0]);
+  var verticalMatch = comparePositions(pos[1], pos2[1]);            
+  var match = horizontalMatch && verticalMatch;
+  if (match) { $("body").append("<p>COLLISION !!!</p>"); }
+}
+        
+        </script>
+</body>
+</html>

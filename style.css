@@ -1,4 +1,4 @@
-#ball {
+.block {
     position: absolute;
     margin-top: 50px;
     height: 150px;
@@ -11,4 +11,31 @@ h1 {
 #container {
     margin-top: 190px;
     text-align: center;
+}
+
+.bomb {
+    position: absolute;
+    left: 1200px;
+    margin: 5px;
+    margin-top: 50px;
+    height: 150px;
+  }
+
+.monkey {
+    position: absolute;
+    margin: 5px;
+    margin-top: 50px;
+    height: 150px;
+    bottom: 300px;
+    margin-left: 300px
+}
+
+#socket {
+    position: absolute;
+    margin-left: -800px;
+    
+    margin-top: 50px;
+    height: 150px;
+    
+    bottom: 272px;
 }
