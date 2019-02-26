@@ -5,7 +5,9 @@
 }
 
 h1 {
-    text-align: center
+    text-align: center;
+    font-size: 65px;
+    color: red;
 }
 
 #container {
@@ -36,4 +38,22 @@ h1 {
     height: 150px;
     
     bottom: 272px;
+}
+
+body {
+    background: url(https://www.customwallpaper.net.au/wp-content/uploads/2016/06/Bananas-Seamless-Pattern-600x600.jpg)
+}
+
+#push {
+    background-color: yellow; 
+    border: none;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50%;
 }
