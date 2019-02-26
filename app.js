@@ -13,11 +13,12 @@ let hi = () => {
     console.log(int1 + int2)
     if (answer === int1 + int2) {
       $(".block").animate({"left": "+=100px"}, "fast", checkCollisions);
-        generateNumbers()
+        generateNumbers();
+        $('#answer').val(' ')
     } else {
         moveLeft()
         $(".block").animate({"left": "-=10px"}, "fast", checkCollisions)
-       
+        $('#answer').val(' ')
     }
 }
 
@@ -69,8 +70,14 @@ function getPositions(box) {
     var laze = phase && haze;
        
     var match = horizontalMatch && verticalMatch;
-    if (laze) { alert('lose') }
-    if (match) { alert('crash') }
+    if (laze) { 
+      alert('Oh no! The banana is in the trash! =(');
+      location.reload();
+    }
+    if (match) {
+       alert('Nom Nom Nom!');
+       location.reload();
+    }
 
     
   }
