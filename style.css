@@ -1,8 +1,14 @@
-/* #ball {
-    position: relative;
-    left: 800px;
+#ball {
+    position: absolute;
+    margin-top: 50px;
+    height: 150px;
 }
 
-#hi {
-    margin-top: 60px
-} */
+h1 {
+    text-align: center
+}
+
+#container {
+    margin-top: 190px;
+    text-align: center;
+}
