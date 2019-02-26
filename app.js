@@ -28,6 +28,7 @@ function right() {
     imgObj = $('.block')[0];
     imgObj.style.left = '700px';
 }
+
 // moves the image right or left depending on answer
 function moveRight () {
     imgObj.style.left = parseInt(imgObj.style.left) + 125 + 'px';
@@ -58,18 +59,15 @@ function getPositions(box) {
     var box = $(".bomb")[0];
     var splinter = $('.monkey')[0];
     var hey = getPositions(splinter)
-    console.log(hey)
     var pos = getPositions(box);
-    console.log(this)
     var pos2 = getPositions(this);
-    
     var horizontalMatch = comparePositions(pos[0], pos2[0]);
     var verticalMatch = comparePositions(pos[1], pos2[1]);    
     var phase = comparePositions(hey[0], pos2[0])  
     var haze = comparePositions(hey[1], pos2[1])
     var laze = phase && haze;
-       
     var match = horizontalMatch && verticalMatch;
+
     if (laze) { 
       alert('Oh no! The banana is in the trash! =(');
       location.reload();
@@ -78,22 +76,8 @@ function getPositions(box) {
        alert('Nom Nom Nom!');
        location.reload();
     }
-
-    
   }
 
   $("#right").click(function(){
     $(".block").animate({"left": "+=100px"}, "fast", checkCollisions);
   });
-  
-  // $("#left").click(function(){
-  //   $(".block").animate({"left": "-=50px"}, "fast", checkCollisions);
-  // });
-  
-  // $("#up").click(function(){
-  //   $(".block").animate({"top": "-=50px"}, "fast", checkCollisions);
-  // });
-  
-  // $("#down").click(function(){
-  //   $(".block").animate({"top": "+=50px"}, "fast", checkCollisions);
-  // });
