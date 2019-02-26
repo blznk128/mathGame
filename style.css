@@ -9,25 +9,23 @@ h1 {
 }
 
 #container {
-    margin-top: 190px;
     text-align: center;
 }
 
 .bomb {
     position: absolute;
-    left: 1200px;
+    left: 1410px;
     margin: 5px;
     margin-top: 50px;
     height: 150px;
+    width: 205px;
+    transform: rotate(90deg);
   }
 
 .monkey {
-    position: absolute;
-    margin: 5px;
-    margin-top: 50px;
     height: 150px;
-    bottom: 300px;
-    margin-left: 300px
+    margin-left: 40px;
+    margin-top: 51px;
 }
 
 #socket {

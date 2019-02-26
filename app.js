@@ -12,11 +12,11 @@ let hi = () => {
     let answer = parseInt($('#answer').val());
     console.log(int1 + int2)
     if (answer === int1 + int2) {
-      $(".block").animate({"left": "+=50px"}, "fast", checkCollisions);
+      $(".block").animate({"left": "+=100px"}, "fast", checkCollisions);
         generateNumbers()
     } else {
         moveLeft()
-        $(".block").animate({"left": "-=50px"}, "fast", checkCollisions)
+        $(".block").animate({"left": "-=10px"}, "fast", checkCollisions)
        
     }
 }
@@ -76,7 +76,7 @@ function getPositions(box) {
   }
 
   $("#right").click(function(){
-    $(".block").animate({"left": "+=50px"}, "fast", checkCollisions);
+    $(".block").animate({"left": "+=100px"}, "fast", checkCollisions);
   });
   
   // $("#left").click(function(){
